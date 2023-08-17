@@ -14,10 +14,10 @@ stages:
         npm install
       displayName: 'Build'
 
-    - task: ArchiveFiles@2
+    - task: ArchiveFiles@2.206.0
       inputs:
         rootFolderOrFile: 'dist/trainschedule.zip'
-        includeRootFolder: true
+        includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/trainschedule.zip'
         replaceExistingArchive: true
