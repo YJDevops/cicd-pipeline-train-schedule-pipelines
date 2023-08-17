@@ -24,3 +24,9 @@ stages:
     - publish: $(Build.ArtifactStagingDirectory)/trainschedule.zip
       artifact: drop
       displayName: 'Publish Artifact'
+    - task: PublishTestResults@2
+      inputs:
+        testResultsFormat: 'JUnit'
+        testResultsFiles: '**/TEST-*.xml'
+        mergeTestResults: true
+        testRunTitle: 'TestingJUnit'
