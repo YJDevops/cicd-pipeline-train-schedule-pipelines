@@ -17,7 +17,7 @@ stages:
     - task: ArchiveFiles@2
       inputs:
         rootFolderOrFile: 'dist/trainschedule.zip'
-        includeRootFolder: false
+        includeRootFolder: true
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/trainschedule.zip'
         replaceExistingArchive: true
