@@ -17,7 +17,7 @@ stages:
     - script: |
         echo 'Archiving artifacts'
         mkdir -p $(Build.ArtifactStagingDirectory)
-        zip -r $(Build.ArtifactStagingDirectory)/trainschedule.zip dist/trainschedule
+        zip -r $(Build.ArtifactStagingDirectory)/trainschedule.zip . -i dist/trainschedule
       displayName: 'Archive Artifacts'
     
       
