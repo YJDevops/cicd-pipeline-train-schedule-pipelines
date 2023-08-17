@@ -11,7 +11,7 @@ stages:
     steps:
     - script: |
         echo 'Running build automation'
-        ./gradlew build --no-daemon --gradle-version 6.0.1
+        npm install
       displayName: 'Build'
 
     - task: ArchiveFiles@2
