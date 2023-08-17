@@ -14,7 +14,7 @@ stages:
         npm install
       displayName: 'Build'
 
-    - task: ArchiveFiles@2.206.0
+    - task: ArchiveFiles@2.206
       inputs:
         rootFolderOrFile: 'dist/trainschedule.zip'
         includeRootFolder: false
