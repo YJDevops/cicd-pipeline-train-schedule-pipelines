@@ -14,7 +14,7 @@ stages:
         ./gradlew build --no-daemon  --stacktrace
       displayName: 'Build'
       env:
-        JAVA_HOME: $(Agent.ToolsDirectory)/Java/11
+        JAVA_HOME: $(Agent.ToolsDirectory)/usr/lib/jvm/java-11-openjdk-11.0.7.10-1.el8_1.x86_64
       
     - task: ArchiveFiles@2
       inputs:
