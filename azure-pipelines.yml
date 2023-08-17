@@ -13,9 +13,6 @@ stages:
         echo 'Running build automation'
         ./gradlew build --no-daemon  --stacktrace
       displayName: 'Build'
-      env:
-        JAVA_HOME: $(Agent.ToolsDirectory)/Java/11
-     
 
     - task: ArchiveFiles@2
       inputs:
