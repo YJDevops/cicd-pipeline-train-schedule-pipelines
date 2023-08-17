@@ -14,14 +14,12 @@ stages:
         npm install
       displayName: 'Build'
 
-    - task: ArchiveFiles@2
-      inputs:
-        rootFolderOrFile: 'dist/trainschedule.zip'
-        includeRootFolder: false
-        archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/trainschedule.zip'
-        replaceExistingArchive: true
+    - script: |
+        echo 'Archiving artifacts'
+        mkdir -p $(Build.ArtifactStagingDirectory)
+        zip -r $(Build.ArtifactStagingDirectory)/trainschedule.zip dist/trainschedule
       displayName: 'Archive Artifacts'
+    
       
     - publish: $(Build.ArtifactStagingDirectory)/trainschedule.zip
       artifact: drop
