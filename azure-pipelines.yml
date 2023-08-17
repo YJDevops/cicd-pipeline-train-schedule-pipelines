@@ -17,12 +17,6 @@ stages:
         JAVA_HOME: $(Agent.ToolsDirectory)/Java/11
      
 
-     
-    - task: UseJavaVersion@1
-      inputs:
-        versionSpec: '11'
-        addToPath: true
-        jdkArchitectureOption: 'x64'
     - task: ArchiveFiles@2
       inputs:
         rootFolderOrFile: 'dist/trainschedule.zip'
