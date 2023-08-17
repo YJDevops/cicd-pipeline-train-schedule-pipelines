@@ -11,7 +11,8 @@ stages:
     steps:
     - script: |
         echo 'Running build automation'
-        ./gradlew build --no-daemon  --stacktrace
+        ./gradlew wrapper --gradle-version 6.0.1
+        ./gradlew build --no-daemon 
       displayName: 'Build'
 
     - task: ArchiveFiles@2
