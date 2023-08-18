@@ -11,7 +11,7 @@ stages:
     steps:
     - script: |
         echo 'Running build automation'
-        npm install
+        ./gradlew build --no-daemon
       displayName: 'Build'
 
     - script: |
@@ -30,3 +30,14 @@ stages:
         testResultsFiles: '**/TEST-*.xml'
         mergeTestResults: true
         testRunTitle: 'TestingJUnit'
+    - task: Gradle@2
+      inputs:
+        gradleWrapperFile: 'gradlew'
+        options: '-Xmx3072m'
+        tasks: 'build'
+        publishJUnitResults: true
+        testResultsFiles: '**/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        jdkVersionOption: '1.8'
+        sonarQubeRunAnalysis: false
+        spotBugsAnalysis: false
